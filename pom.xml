@@ -10,6 +10,7 @@
 
     <modules>
         <module>service-register</module>
+        <module>service-config</module>
     </modules>
 
 </project>
