@@ -11,6 +11,8 @@
     <modules>
         <module>service-register</module>
         <module>service-config</module>
+        <module>service-gateway</module>
+        <module>service-namespace</module>
     </modules>
 
 </project>

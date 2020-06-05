@@ -1,0 +1,26 @@
+server:
+  port: 4020
+spring:
+  application:
+    name: service-gateway
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+      routes:
+        - id: service-register
+          uri: lb://service-register
+          predicates:
+            - Path=/register/**
+          filters:
+            - StripPrefix=1
+        - id: service-config
+          uri: lb://service-config
+          predicates:
+            - Path=/config/**
+          filters:
+            - StripPrefix=1
